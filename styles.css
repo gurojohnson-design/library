@@ -1,0 +1,43 @@
+.cardstack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: tan;
+    width: 30%;
+    padding: 1rem;
+
+}
+
+.title {
+    background-color: red;
+}
+
+.author {
+    background-color: orange;
+}
+
+.pages {
+    background-color: yellow;
+}
+
+.readIt {
+    background-color: green;
+}
+
+.yesNo {
+    background-color: blue;
+}
+
+.rating {
+    background-color: indigo;
+}
+
+.notes {
+    background-color: violet;
+}

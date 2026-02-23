@@ -34,3 +34,61 @@ myLibrary.push(new book('dune', 'frank herbert', 700, 'yes', 5, 'so many notes')
 
 console.log(myLibrary)
 
+
+// time to make the card for the book display
+const cardstack = document.createElement('div');
+cardstack.classList.add('cardstack');
+//grab container for cardstack to go to
+const container = document.getElementById('cardstack');
+container.appendChild(cardstack);
+
+// append children to create card.... in a function?
+function createCard() {
+    for (item of myLibrary) {
+        // create card
+        const card = document.createElement('div');
+        card.classList.add('card');
+        
+        const title = document.createElement('p');
+        title.classList.add('title');
+        
+        const author = document.createElement('p');
+        author.classList.add('author');
+        
+        const pages = document.createElement('p');
+        pages.classList.add('pages');
+        
+        const read = document.createElement('div');
+        read.classList.add('read');
+        
+        const readIt = document.createElement('p');
+        readIt.classList.add('readIt');
+        
+        const yesNo = document.createElement('p');
+        yesNo.classList.add('yesNo');
+        
+        const rating = document.createElement('div')
+        rating.classList.add('rating');
+        
+        const notes = document.createElement('p');
+        notes.classList.add('notes');
+        // append children-- append accepts multiple appendChild does not
+        card.append(title, author, pages, read, rating, notes);
+        read.append(readIt, yesNo)
+  
+        //update text fields of card with array values
+        title.textContent = item.title;
+        author.textContent = `Author: ${item.author}`;
+        pages.textContent = `Length: ${item.pages} pages`;
+        readIt.textContent = 'Read it?';
+        yesNo.textContent = `${item.yesNo}`
+        rating.textContent = `${item.rating}`;
+        notes.textContent = `${item.notes}`;
+        //append card to cardstack
+        cardstack.appendChild(card);
+        console.log(pages.textContent);
+};
+};
+
+createCard();
+
