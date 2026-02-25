@@ -41,3 +41,14 @@
 .notes {
     background-color: violet;
 }
+
+
+
+
+#myForm {
+    display: none;
+}
+
+.uuid {
+    display: none;
+}
