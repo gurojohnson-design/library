@@ -27,13 +27,11 @@ function addBookToLibrary() {
     const notes = document.getElementById('notes').value;
     // plug into constructor and push to array
     myLibrary.push(new book(title, author, pages, read, rating, notes));
+    console.log(read);
 }
 
 myLibrary.push(new book('the hobbit', 'jrr tolkein', 500, 'yes', 5, 'no notes'));
 myLibrary.push(new book('dune', 'frank herbert', 700, 'yes', 5, 'so many notes'));
-
-console.log(myLibrary)
-
 
 // time to make the card for the book display
 const cardstack = document.createElement('div');
@@ -92,9 +90,10 @@ function createCard() {
         author.textContent = `Author: ${item.author}`;
         pages.textContent = `Length: ${item.pages} pages`;
         readIt.textContent = 'Read it?';
-        yesNo.textContent = `${item.yesNo}`
-        rating.textContent = `${item.rating}`;
+        yesNo.textContent = `${item.read}`
+        rating.textContent = `Rating: ${item.rating}/5`;
         notes.textContent = `${item.notes}`;
+        deleteBtn.textContent = 'X';
         //append card to cardstack
         cardstack.appendChild(card);
 };
@@ -102,26 +101,18 @@ function createCard() {
 
 createCard();
 
-// add event listeners to buttons to do the things
-
-
 // add new book button presents hidden form to fill out
 function showForm() {
     document.getElementById('myForm').style.display = 'block';
 }
 
 const newBookBtn = document.getElementById('newBook');
-
 newBookBtn.addEventListener('click', showForm);
 
 
 // make the buttons do their jobs
 
 const deleteBtn = document.getElementById('deleteBtn');
-
-
-
-
 
 // set all delete buttons to delete from array and card they're in
 cardstack.addEventListener('click', (event) => {

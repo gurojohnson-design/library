@@ -1,8 +1,41 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
 .cardstack {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-
+    background-color: gray;
 }
 
 .card {
@@ -11,35 +44,45 @@
     background-color: tan;
     width: 30%;
     padding: 1rem;
+    gap: 1rem;
+}
+
+.deleteBtn {
+    align-self: flex-end;
+    background-color: inherit;
+    border: none;
+    font-size: 1rem;
+    font-weight: bolder;
 
 }
 
 .title {
-    background-color: red;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    text-transform: capitalize;
+    text-align: center;
 }
 
-.author {
-    background-color: orange;
+.author, .pages {
+    text-transform: capitalize;
 }
+
+
+
 
 .pages {
-    background-color: yellow;
 }
 
 .readIt {
-    background-color: green;
 }
 
 .yesNo {
-    background-color: blue;
 }
 
 .rating {
-    background-color: indigo;
 }
 
 .notes {
-    background-color: violet;
 }
 
 
