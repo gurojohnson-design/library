@@ -30,7 +30,7 @@ function addBookToLibrary() {
     console.log(read);
 }
 
-myLibrary.push(new book('the hobbit', 'jrr tolkein', 500, 'yes', 5, 'no notes'));
+myLibrary.push(new book('the hobbit', 'jrr tolkein', 500, 'No', 5, 'no notes'));
 myLibrary.push(new book('dune', 'frank herbert', 700, 'yes', 5, 'so many notes'));
 
 // time to make the card for the book display
@@ -84,6 +84,18 @@ function createCard() {
         card.append(uuid, deleteBtn, title, author, pages, read, rating, notes);
         read.append(readIt, yesNo)
   
+function updateRead() {
+    if (yesNo.textContent == 'No') {
+        const updateRead = document.createElement('button');
+        updateRead.id = 'updateRead';
+        yesNo.append(updateRead);
+        updateRead.textContent = 'Mark as read';
+        updateRead.addEventListener('click', () => {
+        yesNo.textContent = 'Yes';
+        });
+        };
+}
+
         //update text fields of card with array values
         uuid.textContent = item.id;
         title.textContent = item.title;
@@ -94,8 +106,10 @@ function createCard() {
         rating.textContent = `Rating: ${item.rating}/5`;
         notes.textContent = `${item.notes}`;
         deleteBtn.textContent = 'X';
+        updateRead();
         //append card to cardstack
         cardstack.appendChild(card);
+
 };
 };
 
@@ -136,3 +150,14 @@ form.addEventListener('submit', (event) => {
     createCard();
     form.reset();
 })
+
+
+const doneBtn = document.getElementById('done');
+doneBtn.addEventListener('click', () => {
+    document.getElementById('myForm').style.display = 'none';
+})
+
+
+
+// to do: 
+// need to add a button to change read status however that happens. this button needs to be in the prototype of each object i suppose

@@ -35,13 +35,12 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    background-color: gray;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    background-color: tan;
+    background-color: rgb(95, 65, 24);
     width: 30%;
     padding: 1rem;
     gap: 1rem;
@@ -67,31 +66,37 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: capitalize;
 }
 
-
-
-
-.pages {
+h2 {
+    text-align: center;
 }
 
-.readIt {
+body {
+    background-color: rgb(3, 48, 11);
 }
 
-.yesNo {
+#newBook {
+    background-color: rgb(47, 125, 47);
 }
-
-.rating {
-}
-
-.notes {
-}
-
-
 
 
 #myForm {
     display: none;
+    color: white;
+    line-height: 2;
+}
+
+#myForm input {
+    background-color: rgb(99, 68, 68, .65);
+    border: none;
+    border-radius: 12px;
 }
 
 .uuid {
     display: none;
+}
+
+#submit, #newBook, #read, #done, #updateRead {
+    background-color: rgb(47, 125, 47);
+    border: none;
+    border-radius: 7px;
 }
