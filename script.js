@@ -145,3 +145,23 @@ const doneBtn = document.getElementById('done');
 doneBtn.addEventListener('click', () => {
     document.getElementById('myForm').style.display = 'none';
 });
+
+// VALIDATE FORM INFO HERE
+
+// once validated as 'invalid' the message doesnt clear, need to clear the error message at the begining on the check so that it 'resets' otherwise it will forever be false and never re assess
+form.addEventListener('input', (e) => {
+  const field = e.target;
+  field.setCustomValidity('');
+
+  if (!field.checkValidity()) {
+    field.setCustomValidity('A good library would collect this information. You should too.');
+  } else {
+  }
+});
+
+form.addEventListener('invalid', (e) => {
+  e.target.setCustomValidity('A good library would collect this information. You should too.');
+}, true);
+
+
+// trying the make this work for all inputs to display a custom error message. it works for the first field but wont move off of it when its supposed to be valid
