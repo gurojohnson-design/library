@@ -31,7 +31,6 @@ function addBookToLibrary() {
     const notes = document.getElementById('notes').value;
     // Plug into constructor and push to array
     myLibrary.push(new Book(title, author, pages, read, rating, notes));
-    console.log(read);
 }
 
 myLibrary.push(new Book('the hobbit', 'jrr tolkein', 500, 'No', 5, 'no notes'));
